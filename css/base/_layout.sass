@@ -1,0 +1,345 @@
+@import "../variables"
+@import "../mixin"
+
+// Col
++col()
+
+.container
+  width: 100%
+  height: inherit
+  max-width: $wrapperWidth
+  position: relative
+  margin-right: auto
+  margin-left: auto
+  //padding: 0 $space-16
+  z-index: 1
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  flex: 0 1 auto
+  margin-right: -$space-16
+  margin-left: -$space-16
+  padding-right: $space-8
+  padding-left: $space-8
+
+  &.reverse
+    flex-direction: row-reverse
+
+  &.column
+    flex-direction: column
+
+  &.column-reverse
+    flex-direction: column-reverse
+
+  // col in row
+  > [class^=col-],
+  > [class*=col-]
+    padding-right: $space-8
+    padding-left: $space-8
+    display: block
+
+
+// Flex
++flex()
+
+.flex-column
+  flex-direction: column
+
+.flex-row
+  flex-direction: row
+
+.flex-row-reverse
+  flex-direction: row-reverse
+
+.flex-wrap
+  flex-wrap: wrap
+
+.flex-no-wrap
+  flex-wrap: nowrap
+
+.flex-y-center
+  align-items: center
+
+.flex-y-stretch
+  align-items: stretch
+
+.flex-y-end
+  align-items: flex-end
+
+.flex-y-start
+  align-items: flex-start
+
+.flex-x-center
+  justify-content: center
+
+.flex-x-between
+  justify-content: space-between
+
+.flex-x-around
+  justify-content: space-around
+
+.flex-x-end
+  justify-content: flex-end
+
+.flex-x-start
+  justify-content: flex-start
+
+.flex-over-center
+  align-items: center
+  justify-content: center
+
+.align-self-start
+  align-self: flex-start
+
+.align-self-center
+  align-self: center
+
+.align-self-end
+  align-self: flex-end
+
+.order-1
+  order: 1
+
+.order-2
+  order: 2
+
+.order-3
+  order: 3
+
+// Space
++marginSpace()
+
+.m-auto
+  margin: auto
+
+// Float
+.float-r
+  float: right
+
+.float-l
+  float: left
+
+// Displays
+.d-flex
+  display: flex
+
+.d-none
+  display: none
+
+.d-block
+  display: block
+
+.d-inline-block
+  display: inline-block
+
+.d-inline
+  display: inline
+
+.d-inline-flex
+  display: inline-flex
+
+.d-flex-force
+  display: flex !important
+
+.d-block-force
+  display: block !important
+
+.d-inline-block-force
+  display: inline-block !important
+
+.d-inline-force
+  display: inline !important
+
+.d-inline-flex-force
+  display: inline-flex !important
+
+.col-0
+  display: none
+
+.col-xl-0
+  +breakpoint(bigDesktop)
+    display: none !important
+
+.col-sm-0
+  +breakpoint(mobile)
+    display: none !important
+
+// Text
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
+.text-justify
+  text-align: justify
+
+
+// Font
+.fontWeight-900
+  font-weight: $fontWeight-900
+
+.fontWeight-700
+  font-weight: $fontWeight-700
+
+.fontWeight-400
+  font-weight: $fontWeight-400
+
+.fontWeight-200
+  font-weight: $fontWeight-200
+
+.fontSize-40
+  font-size: $fontSize-40
+
+.fontSize-32
+  font-size: $fontSize-32
+
+.fontSize-28
+  font-size: $fontSize-28
+
+.fontSize-24
+  font-size: $fontSize-24
+
+.fontSize-20
+  font-size: $fontSize-20
+
+.fontSize-18
+  font-size: $fontSize-18
+
+.fontSize-16
+  font-size: $fontSize-16
+
+.fontSize-14
+  font-size: $fontSize-14
+
+.fontSize-12
+  font-size: $fontSize-12
+
+.fontSize-9
+  font-size: $fontSize-9
+
+.fontSize-10
+  font-size: $fontSize-10
+
+//.en-word
+//  font-family: $fontFamilyEn
+
+//// Colors
+.colorWhite
+  color: $colorWhite !important
+
+.colorBlack
+  color: $colorBlack
+
+//.colorBlack-4e4e4e
+//  color: $colorBlack-4e4e4e
+//
+//.colorRed
+//  color: $blue-2578D9
+//
+//.colorPink-c30052
+//  color: $pink-c30052
+//
+.colorGold
+  color: $gold-base
+
+.colorGoldLite
+  color: $gold-lite
+
+.colorGoldDark
+  color: $gold-dark
+
+a.colorOrange
+  &:hover
+    text-decoration: underline
+.colorBlue
+  color: $blue-dark
+
+
+.colorGray
+  color: $gray-2f2f2f
+
+.colorGray-5e5e5e
+  color: $gray-5e5e5e
+
+.colorGray-979797
+  color: $gray-979797
+
+.colorGray-cbcbcb
+  color: $gray-cbcbcb
+
+.colorGray-e6e6e6
+  color: $gray-e6e6e6
+
+.colorGray-f2f2f2
+  color: $gray-f2f2f2
+
+.colorGray-f9f9f9
+  color: $gray-f9f9f9
+
+.radius-8
+  border-radius: $radius-8
+
+.radius-16
+  border-radius: $radius-16
+
+.radius-16-force
+  border-radius: $radius-16 !important
+
+// Other
+.no-padding
+  padding: 0 !important
+
+.no-margin
+  margin: 0 !important
+
+.h100
+  height: 100%
+
+.h100vh
+  height: 100vh
+
+.h50vh
+  height: 50vh
+
+.w100
+  width: 100%
+
+.cursorPointer
+  cursor: pointer
+
+.cursorNotAllowedrtl
+  cursor: not-allowed
+
+.no-scroll
+  overflow: hidden !important
+
+.no-select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.m-x-auto
+  margin-right: auto
+  margin-left: auto
+
+
+.m-block-start
+  -webkit-margin-before: auto
+  margin-block-start: auto
+
+.no-over-flow
+  overflow: unset !important
+
+.ltr
+  direction: ltr
+
+.discount_price
+  text-decoration: line-through

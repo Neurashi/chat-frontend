@@ -1,0 +1,47 @@
+@import "../variables"
+@import "media-query"
+
+// Card Style
+=boxStyle($background, $radius, $shadow: "")
+  background: $background
+  border-radius: $radius
+  @if ($shadow != "")
+    box-shadow: $shadow
+
+// Creat Circle
+=circle($size, $color: "")
+  width: $size
+  line-height: $size
+  height: $size
+  border-radius: $size/2
+
+  @if ($color != "")
+    background: $color
+
+// Scrollbar
+=scrollbars($color: $gray-cbcbcb, $width: 4px, $radius: 2px, $background: $gray-f2f2f2)
+  overflow: auto
+  scrollbar-color: $color transparent
+  scrollbar-width: thin
+
+  &::-webkit-scrollbar
+    width: $width
+    height: $width
+    border-radius: $radius
+
+    //&:hover
+
+    @if ($background != "")
+      background: $background
+
+  &::-webkit-scrollbar-track
+    background: none
+    padding: $width / 2
+
+  &::-webkit-scrollbar-thumb
+    background: $color
+    border-radius: $radius
+
+
+
+

@@ -1,0 +1,26 @@
+@import "../variables"
+@import "../mixins/media-query"
+
+html
+  font-family: $fontFamilyBase, sans-serif
+  font-weight: $fontWeight-200
+  font-size: $baseFontSize
+  color: $gray-2f2f2f
+  direction: $directionBase
+
+body
+  background: $over-black
+  color: $colorWhite
+  &::-webkit-scrollbar
+    width: 10px
+
+  &::-webkit-scrollbar-track
+    background: rgba(255,255,255,0.1)
+
+  &::-webkit-scrollbar-thumb
+    background: #888
+    border-radius: 10px
+
+  &::-webkit-scrollbar-thumb:hover
+    background: #fff
+

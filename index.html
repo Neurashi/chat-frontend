@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld4jlAoAAAAAGAGr8moco7MYacJtXz9LBcUrLHv"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="robots" content="noimageindex, nofollow, nosnippet">
+    <title>Neurashi - Chat</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/base/responsive.css">
+    <link rel="stylesheet" href="font/icon/css/brg-icon.css">
+    <link rel="icon" href="img/logo/logo-fav-2.png" sizes="32x32">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="container">
+            <div class="d-flex flex-x-between flex-y-center">
+                <div class="col-4">
+                    <div class="d-flex flex-x-start">
+                        <a href="https://neurashi.com" class="header__logo"><img src="img/logo/logo-w.png" alt=""><span
+                                class="badge">Chat</span></a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="d-flex flex-x-end flex-y-center" id="loginRegisterButton">
+                        <ul class="header__link_step d-flex">
+                            <li class="header__link_item"><a href="https://neurashi.com/">Learn Neurashi</a></li>
+                            <li class="header__link_item"><a href="https://neurashi.com/developers/">Developer</a></li>
+                        </ul>
+                        <span data-btn="registerLogin" class="btn btn__small">
+                            <i class="i i-Usersuser-3-line m-r-4"></i><span id="loginRegisterTitle">Account</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main_menu">
+        <div class="main_menu__close_btn"><i class="i i-Systemsclose-fill"></i></div>
+        <div class="container">
+            <div class="d-flex h100vh flex-column flex-x-center">
+                <ul class="main_menu__step">
+                    <li class="main_menu__item"><a href="#">Home</a></li>
+                    <li class="main_menu__item"><a href="#">API config</a>
+                        <ul class="main_menu__step">
+                            <li class="main_menu__item"><a href="#">.net</a></li>
+                            <li class="main_menu__item"><a href="#">Redux</a></li>
+                            <li class="main_menu__item"><a href="#">For test item</a></li>
+                        </ul>
+                    </li>
+                    <li class="main_menu__item"><a href="#">Account</a></li>
+                    <li class="main_menu__item"><a href="#">Contact Us</a></li>
+                    <li class="main_menu__item"><a href="#">About Us</a></li>
+                    <li class="main_menu__item"><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main class="main" id="fullpage">
+        <div class="section main__section_1 active">
+            <div class="container">
+                <div class="d-flex flex-over-center">
+                    <div class="chat">
+                        <div class="chat__help_text">
+                            <div><i class="i i-Weatherflashlight-fill"></i></div>
+                            <div>Feel free to ask me anything! I'm happy to help with coding questions, discuss
+                                pictures, or just have a nice conversation.</div>
+                        </div>
+                        <div class="chat__header">
+                            <div class="d-flex h100 flex-x-between">
+                                <div class="d-flex">
+                                    <div class="chat__header__btn" data-btn="close_chat"><i
+                                            class="i i-Systemsclose-fill"></i></div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="chat__header__btn has_tooltip" data-btn="history"><i
+                                            class="i i-Systemshistory-line"></i><span class="tooltip">History</span>
+                                    </div>
+                                    <div class="chat__header__btn has_tooltip"><i
+                                            class="i i-Systemsspam-2-line"></i><span class="tooltip">Report a
+                                            problem</span></div>
+                                    <div class="chat__header__btn has_tooltip" id="deleteMessagesButton"><i
+                                            class="i i-Systemsdelete-bin-2-line"></i><span class="tooltip">Delete
+                                            chat</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat__wrap d-flex flex-over-center flex-column">
+                            <div class="chat__massage_box" id="chatContainer">
+
+                                <div class="chat__select_server css-1q2fuvl">
+
+                                    <div class="css-1o0kk0p yagami" onclick="changeBackgroundColor(this)"
+                                        id="model_active"
+                                        style="background-color: rgba(204, 204, 204, 0.5); color: rgb(51, 51, 51);">
+                                        <div class="css-bv1q24"><svg stroke="currentColor" fill="currentColor"
+                                                stroke-width="0" viewBox="0 0 24 24" focusable="false"
+                                                class="chakra-icon css-1rgvbqi" height="1em" width="1em"
+                                                xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-fill=""
+                                                data-darkreader-inline-stroke=""
+                                                style="--darkreader-inline-fill: currentColor; --darkreader-inline-stroke: currentColor;">
+                                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                                <path
+                                                    d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z">
+                                                </path>
+                                            </svg></div>yagami
+                                    </div>
+                                    <div class="css-1o0kk0p neurashi" onclick="changeBackgroundColor(this)">
+                                        <div class="css-bv1q24"><svg stroke="currentColor" fill="currentColor"
+                                                stroke-width="0" viewBox="0 0 24 24" focusable="false"
+                                                class="chakra-icon css-1rgvbqi" height="1em" width="1em"
+                                                xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-fill=""
+                                                data-darkreader-inline-stroke=""
+                                                style="--darkreader-inline-fill: currentColor; --darkreader-inline-stroke: currentColor;">
+                                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                                <path
+                                                    d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z">
+                                                </path>
+                                            </svg></div>neurashi
+                                    </div>
+                                    <div class="css-1o0kk0p shingeki" onclick="changeBackgroundColor(this)">
+                                        <div class="css-bv1q24"><svg stroke="currentColor" fill="currentColor"
+                                                stroke-width="0" viewBox="0 0 24 24" focusable="false"
+                                                class="chakra-icon css-1rgvbqi" height="1em" width="1em"
+                                                xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-fill=""
+                                                data-darkreader-inline-stroke=""
+                                                style="--darkreader-inline-fill: currentColor; --darkreader-inline-stroke: currentColor;">
+                                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                                <path
+                                                    d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z">
+                                                </path>
+                                            </svg></div>shingeki
+                                    </div>
+
+                                    <!-- <div class="css-19i3ebn chartmind" onclick="changeBackgroundColor(this)">
+                                    <div class="css-bv1q24"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                            focusable="false" class="chakra-icon css-1rgvbqi" height="1em" width="1em"
+                                            xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-fill="" data-darkreader-inline-stroke=""
+                                            style="--darkreader-inline-fill: currentColor; --darkreader-inline-stroke: currentColor;">
+                                            <path
+                                                d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z">
+                                            </path>
+                                        </svg></div>chartmind
+                                </div> -->
+                                </div>
+
+                                <div class="chat__msg_item chat__msg_item--robot">
+                                    <div class="robot_info d-flex flex-column flex-x-between flex-y-center">
+                                        <div class="robot_info--pic"><img src="img/logo/w-logo-small.png"
+                                                alt=""><span></span>
+                                        </div>
+                                    </div>
+                                    <div class="wrap">
+                                        <p>
+                                            Welcome to NEURASHI CHAT
+                                        </p>
+                                        <p class="note">
+                                            YAGAMI is Looking forward to connecting through our chat. Please feel free
+                                            to share anything that's important to you - your interests, feelings, views
+                                            - and I'll listen.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="chat__empty_style">
+                                <i class="i i-Systemsshield-line"></i>
+                                <p>Our chat history has been cleared and I'm ready for a new discussion</p>
+                            </div>
+                            <div class="chat__input d-flex">
+                                <div class="file_box d-flex" id="fileContainer">
+                                    <div class="file_box__item" id="previewImageMessage"><img id="selectedImage"
+                                            src="noImageSet" alt=""><span class="delete_btn"
+                                            id="deleteSendImageMessage"><i class="i i-Systemsclose-fill"></i></span>
+                                    </div>
+                                </div>
+                                <input id="inputMessage" type="text" placeholder="Message NEURASHI...">
+                                <div class="d-flex">
+                                    <button id="fileButton">
+                                        <input id="fileInput" type="file" accept="image/jpeg, image/png">
+                                        <i title="file" class="i i-Systemsupload-cloud-2-line"></i>
+                                    </button>
+                                    <button id="sendButton">
+                                        <i title="send" class="i i-Businesssend-plane-2-fill"></i>
+                                    </button>
+                                </div>
+                                <div class="loading" id="loadingIndicator"></div>
+                                <script src="./api/apiConstants.js"></script>
+                                <script src="./api/chatApi.js"></script>
+                                <script src="./api/errorHandling.js"></script>
+                                <script src="./actions/message.js"></script>
+                                <script src="./store/dataManagement.js"></script>
+                                <script src="./actions/sendMessage.js"></script>
+                            </div>
+
+                        </div>
+                        <div class="chat__history">
+                            <div class="chat__history__header d-flex flex-x-between">
+                                <div class="title">History</div>
+                                <div class="close"><i class="i i-Systemsclose-fill"></i></div>
+                            </div>
+                            <div class="chat__history__step">
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">It is the ratio of a regular pentagon's diagonal to its side and
+                                        thus appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">The ratio of a regular pentagon's diagonal to its side and thus
+                                        appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">ratio of a regular pentagon's diagonal to its side and thus
+                                        appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">Regular pentagon's diagonal to its side and thus appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">Pentagon's diagonal to its side and thus appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">It is the ratio of a regular pentagon's diagonal to its side and
+                                        thus appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">Pentagon's diagonal to its side and thus appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+                                <a href="#" class="chat__history__item">
+                                    <div class="title">It is the ratio of a regular pentagon's diagonal to its side and
+                                        thus appears in</div>
+                                    <div class="date"><span>14:23</span> - <span>30 November 2023</span></div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section main__section_2">
+            <div class="container h100vh">
+                <div class="d-flex flex-over-center h100">
+                    <div class="category__step row">
+                        <div class="col-4 col-md-6">
+                            <div class="category__item d-flex flex-column flex-x-center">
+                                <i class="i i-Systemstimer-line"></i>
+                                <div class="title">AI Chat Bot</div>
+                                <div class="sub_title">Neurashi AI Chabot</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-6">
+                            <div class="category__item d-flex flex-column flex-x-center">
+                                <i class="i i-Systemsshield-flash-line"></i>
+                                <div class="title">CILM</div>
+                                <div class="sub_title">is a versatile conversational AI</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-6">
+                            <div class="category__item d-flex flex-column flex-x-center">
+                                <i class="i i-Systemsalarm-warning-line"></i>
+                                <div class="title">TVA</div>
+                                <div class="sub_title">is a cutting-edge fusion of the capabilities offered by CILM and
+                                    ChartMind</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-6">
+                            <div class="category__item d-flex flex-column flex-x-center">
+                                <i class="i i-Usersopen-arm-line"></i>
+                                <div class="title">BCILM</div>
+                                <div class="sub_title">is a CILM variant focused on the cryptocurrency world</div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-6">
+                            <div class="category__item d-flex flex-column flex-x-center">
+                                <i class="i i-Weatherflashlight-fill"></i>
+                                <div class="title">ChartMind</div>
+                                <div class="sub_title">chartMind is a state-of-the-art MultiModal AI system designed to
+                                    interpret and analyze images, with a special focus on market charts. </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-6">
+                            <div class="category__item d-flex flex-column flex-x-center">
+                                <i class="i i-Systemsheart-2-line"></i>
+                                <div class="title"><a href="https://neurashi.com/road-map/">Roadmap</a></div>
+                                <div class="sub_title">A pathway to knowing intelligence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section main__section_3">
+            <div class="container">
+                <div class="row flex-y-center h100vh">
+                    <div class="col-7 col-sm-12">
+                        <div class="content_part">
+                            <div class="title">An Introduction to Neurashi</div>
+                            <p>With the remarkable strides of artificial intelligence (AI), dramatic breakthroughs in
+                                healthcare, finance, transportation, and military industries have been noticeably
+                                increased in the recent era of technology. Yet, greater complexity in AI systems still
+                                leads to increased mystery over their internal workings, and without effective methods
+                                in place, the ramifications of inaccurate or manipulated results could be perilous.
+                                Addressing this uncertainty is crucial in validating AI outputs’ authenticity and
+                                ethical compliance.<br><br>
+                                In response to this imperative need, we introduce a rigorously devised decentralized
+                                framework, called Neurashi, purposed to bestow credibility upon AI processes. Neurashi’s
+                                innovative solution marries the transformative attributes of blockchain technology with
+                                a strategically developed crypto-economic reward system in the center of which are
+                                specialized AI agents responsible for meticulously assessing the results derived from
+                                diverse AI models. This system capacitates stakeholders across various sectors to
+                                methodically determine the reliability of AI-generated results. It does so by leveraging
+                                a far-reaching network of Critics committed to driving coordinated validation
+                                efforts.<br><br>
+
+                                This trailblazing framework champions transparency, ensures censorship resistance, and
+                                instills objectivity across the validation paradigm by pooling the expertise of a
+                                comprehensive array of independent validators.<br><br>
+
+                                So Neurashi’s contemporary and steadfast AI blockchain framework galvanizes the nexus of
+                                artificial intelligence (AI) with the robustness of blockchain infrastructure and
+                                integrates an innovative crypto-economic incentive system to foster and sustain the
+                                construct of trust and credibility.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-5 col-sm-12">
+                        <video autoplay style="margin-top: 3rem;" loop="loop">
+                            <source src="img/home-power.mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="section footer">
+            <div class="container">
+                <div class="d-flex flex-x-center footer__link_step">
+                    <a href="#" class="footer__link m-x-16">Home</a>
+                    <!-- <a href="#" class="footer__link m-x-16">Account</a> -->
+                    <!-- <a href="#" class="footer__link m-x-16">Help</a> -->
+                    <a href="https://neurashi.com/contact-us/" class="footer__link m-x-16">Contact us</a>
+                    <a href="https://neurashi.com/about-us/" class="footer__link m-x-16">About</a>
+                    <a href="https://neurashi.com/partnership-2/" class="footer__link m-x-16">Support</a>
+                    <a href="https://neurashi.com/faq/" class="footer__link m-x-16">Policy</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- <div class="modal" data-type="gallery" data-open="xxx" style="display: none;">
+        <div class="modal__container">
+            <div class="modal__menu d-flex flex-x-between">
+                <div class="modal__close_btn"><i class="i i-Systemsclose-fill"></i></div>
+                <div class="modal__info d-flex">
+                    <div class="modal__info__btn"><i class="i i-Businessinbox-fill"></i></div>
+                    <div class="modal__info__btn"><i class="i i-Businessbookmark-fill"></i></div>
+                    <div class="modal__info__btn active"><i class="i i-Systemsheart-line"></i><i
+                            class="i i-Systemsheart-fill"></i></div>
+                    <div class="modal__info__btn"><i class="i i-Systemsdownload-2-line"></i></div>
+                </div>
+            </div>
+            <div class="modal__body">
+                <div class="modal__slider">
+                    <div class="slick-active"><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                </div>
+                <div class="modal__slider__step">
+                    <div class="slick-active"><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic2.png" alt="xxx"></div>
+                    <div><img src="file/pic/pic3.png" alt="xxx"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="bg_motion">
+        <canvas id="canvasOne" width="1000" height="1000"></canvas>
+    </div>
+
+    <div class="register">
+        <div class="wrapper">
+            <form action="" class="form_style form_style--register">
+
+                <!--! START Login Form -->
+                <div class="form_style__step " id="loginForm">
+                    <div class="title">LOGIN</div>
+                    <div class="sub_title">
+                        please log into your account or create account to use this platform.
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Email</label>
+                        <div class="d-flex">
+                            <input class="form_style__input" type="email" placeholder="email" id="loginEmailInput">
+                        </div>
+                        <div id="loginEmailError" class="hidden form_style__error">Please enter a valid Email.</div>
+
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Password</label>
+                        <input class="form_style__input" type="password" placeholder=" * * * * * "
+                            id="loginPasswordInput">
+                        <div id="loginPasswordError" class="hidden form_style__error">Password must be at least 8
+                            characters.</div>
+                    </div>
+                    <div class="form_style__group">
+                        <div id="loginRecaptcha" class="g-recaptcha"
+                            data-sitekey="6LedjVAoAAAAAA5IXER502Tatnz2jc4nHeKfY7M4"></div>
+                    </div>
+                    <div class="form_style__group">
+                        <button class="btn btn__submit" id="loginButton">Login</button>
+                        <div class="form_style__loading " id="loginLoadingIndicator">
+                            <svg class="circle-chart" viewbox="0 0 34 34" width="48" height="48"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="circle-chart__background" stroke="rgba(255,255,255,0.2)" stroke-width="2"
+                                    fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                <circle class="circle-chart__circle" stroke="#fff" stroke-width="2"
+                                    stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431"
+                                    cy="16.91549431" r="15.91549431" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="loginError" class="hidden form_style__error">Login Error</div>
+                    <div class="form_style__group form__help_text">
+                        <p id="goToForget"><a href="#">Forget password</a></p>
+                        <p>Don't have an account?</p>
+                        <p id="goToRegister"><a href="#">Create an account</a></p>
+                        <p id="goToResetPage" style="display: none;"><a href="#">Test</a></p>  <!--! changed -->
+                    </div>
+                </div>
+                <!--? END Login Form -->
+
+
+                <!--! START Register Form -->
+                <div class="form_style__step  " id="registerForm">
+                    <div class="title">REGISTER</div>
+                    <div class="sub_title">
+                        please log into your account or create account to use this platform.
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Email</label>
+                        <div class="d-flex">
+                            <input class="form_style__input" type="email" placeholder="email" id="registerEmailInput">
+                        </div>
+                        <div id="registerEmailError" class="hidden form_style__error">Please enter a valid Email.
+                        </div>
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Password</label>
+                        <input class="form_style__input" type="password" placeholder=" * * * * * "
+                            id="registerPasswordInput">
+                        <div id="registerPasswordError" class="hidden form_style__error">Password must be at least 8
+                            characters.</div>
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Confirm password</label>
+                        <input class="form_style__input" type="password" placeholder=" * * * * * "
+                            id="registerConfirmPasswordInput">
+                        <div id="registerConfirmPasswordError" class="hidden form_style__error">Password & Confirm
+                            Password do not match.</div>
+                    </div>
+                    <div class="form_style__group">
+                        <div id="registerRecaptcha" class="g-recaptcha"
+                            data-sitekey="6LedjVAoAAAAAA5IXER502Tatnz2jc4nHeKfY7M4"></div>
+                    </div>
+                    <div class="form_style__group">
+                        <button class="btn btn__submit" id="registerButton">Create</button>
+                        <div class="form_style__loading" id="registerLoadingIndicator">
+                            <svg class="circle-chart" viewbox="0 0 34 34" width="48" height="48"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="circle-chart__background" stroke="rgba(255,255,255,0.2)" stroke-width="2"
+                                    fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                <circle class="circle-chart__circle" stroke="#fff" stroke-width="2"
+                                    stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431"
+                                    cy="16.91549431" r="15.91549431" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="registerError" class="hidden form_style__error">Register Error</div>
+                    <div class="form_style__group form__help_text">
+                        <p>Have you an account</p>
+                        <p id="goToLogin"><a href="#">logging in to your account</a></p>
+                    </div>
+                </div>
+                <!--? END Register Form -->
+
+                <!--! START Forget Form -->
+                <div class="form_style__step  " id="forgetForm">
+                    <div class="title">Forget Password</div>
+                    <div class="sub_title">
+                        Enter your email address and we will send you instructions to reset your password.
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Email</label>
+                        <div class="d-flex">
+                            <input class="form_style__input" type="email" placeholder="email" id="forgetEmailInput">
+                        </div>
+                        <div id="forgetEmailError" class="hidden form_style__error">Please enter a valid Email.
+                        </div>
+                    </div>
+
+                    <div class="form_style__group">
+                        <div id="forgetRecaptcha" class="g-recaptcha"
+                            data-sitekey="6LedjVAoAAAAAA5IXER502Tatnz2jc4nHeKfY7M4"></div>
+                    </div>
+                    <div class="form_style__group">
+                        <button type="submit" class="btn btn__submit" id="forgetButton">Continue</button>
+                        <div class="form_style__loading" id="forgetLoadingIndicator">
+                            <svg class="circle-chart" viewbox="0 0 34 34" width="48" height="48"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="circle-chart__background" stroke="rgba(255,255,255,0.2)" stroke-width="2"
+                                    fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                <circle class="circle-chart__circle" stroke="#fff" stroke-width="2"
+                                    stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431"
+                                    cy="16.91549431" r="15.91549431" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="forgetError" class="hidden form_style__error">Forget Error</div>
+                    <div class="form_style__group form__help_text">
+                        <p>Have you an account</p>
+                        <p id="goToLogin"><a href="#">logging in to your account</a></p>
+                    </div>
+                </div>
+                <!--? END Forget Form -->
+
+                <!--! START Reset Password Form -->
+                <div class="form_style__step  " id="resetForm">
+                    <div class="title">Reset Password</div>
+                    <div class="form_style__group" style="margin-bottom: 4rem;margin-top: 2rem;">
+                        <label class="form_style__label" for="resetCodeInput">Code</label>
+                        <div class="d-flex">
+                            <input class="form_style__input code" type="tel" maxlength="6" placeholder="_ _ _ _ _"
+                                id="resetCodeInput">
+                        </div>
+                        <div class="form_style__group form__help_text" style="text-align: left;margin-top: 5px;">
+                            <p id="resetPasswordTimer" class="hidden">you can retry at 02:00</p>
+                            <p id="resetPasswordHelper" style="display: none;">Email sent</p>
+                            <!-- <p id="resetPasswordTimer" class="hidden"></p> -->
+                            <!-- <a href="#" id="resendResetCode" class="hidden" style="display: none;">Resend</a> -->
+                            <a href="#" id="resendResetCode" class="hidden" style="display: none;">Resend</a>
+                        </div>
+                        <div id="resetCodeError" class="hidden form_style__error">
+                            Please enter reset password code.
+                        </div>
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label" for="resetNewInput">New Password</label>
+                        <div class="d-flex">
+                            <input class="form_style__input" type="password" placeholder=" * * * * * "
+                                id="resetNewInput">
+                        </div>
+                        <div id="resetNewError" class="hidden form_style__error">Please enter new password.</div>
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label" for="resetRepeatInput">Repeat Password</label>
+                        <div class="d-flex">
+                            <input class="form_style__input" type="password" placeholder=" * * * * * "
+                                id="resetRepeatInput">
+                        </div>
+                        <div id="resetRepeatError" class="hidden form_style__error">Please enter repeat password.</div>
+                    </div>
+
+                    <div class="form_style__group">
+                        <div id="resetRecaptcha" class="g-recaptcha"
+                            data-sitekey="6LedjVAoAAAAAA5IXER502Tatnz2jc4nHeKfY7M4"></div>
+                    </div>
+                    <div class="form_style__group">
+                        <button class="btn btn__submit" id="resetPasswordButton">Continue</button>
+                        <div class="form_style__loading" id="resetLoadingIndicator">
+                            <svg class="circle-chart" viewbox="0 0 34 34" width="48" height="48"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="circle-chart__background" stroke="rgba(255,255,255,0.2)" stroke-width="2"
+                                    fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                <circle class="circle-chart__circle" stroke="#fff" stroke-width="2"
+                                    stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431"
+                                    cy="16.91549431" r="15.91549431" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="resetError" class="hidden form_style__error">Reset Error</div>
+                </div>
+                <!--? END Reset Password Form -->
+
+                <!--! START Confirm Form -->
+                <div class="form_style__step  " id="confirmForm">
+                    <div class="title">Confirm</div>
+                    <div class="sub_title">
+                        Enter the code sent to <span id="confirm-address-email"></span> email
+                    </div>
+                    <div class="form_style__group">
+                        <label class="form_style__label">Code</label>
+                        <div class="d-flex">
+                            <input class="form_style__input code" type="tel" maxlength="6" placeholder="_ _ _ _ _"
+                                id="confirmCodeInput">
+                        </div>
+                    </div>
+                    <div id="confirmError" class="hidden form_style__error">Please enter a Confirmation code.</div>
+                    <div class="form_style__group">
+                        <button class="btn btn__submit" id="confirmButton">Submit</button>
+                        <div class="form_style__loading" id="confirmLoadingIndicator">
+                            <svg class="circle-chart" viewbox="0 0 34 34" width="48" height="48"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle class="circle-chart__background" stroke="rgba(255,255,255,0.2)" stroke-width="2"
+                                    fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+                                <circle class="circle-chart__circle" stroke="#fff" stroke-width="2"
+                                    stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431"
+                                    cy="16.91549431" r="15.91549431" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="form_style__group form__help_text">
+                        <p id="timer" class="hidden">you can retry at 02:00</p>
+                        <p id="timer-helper" style="display: none;">Didn't receive the code?</p>
+                        <a href="#" id="retryButton" class="hidden" style="display: none;">Resend</a>
+                    </div>
+                </div>
+                <!--? END Confirm Form -->
+
+                <!--! START Success Login -->
+                <div class="form_style__step  active" id="successLogin">
+                    <div class="status_icon colorGold text-center"><i class="i i-Usersopen-arm-line"></i></div>
+                    <div class="title text-center">Your account create successful</div>
+                    <div class="sub_title text-center">
+                        You can chat with this ai now
+                    </div>
+                    <div class="form_style__group d-flex">
+                        <a class="btn btn__submit" data-btn="chatNow">Chat Now</a>
+                        <a class="btn btn__submit" id="logOut">Logout</a>
+                    </div>
+                </div>
+                <!--? END Success Login -->
+
+
+                <script src="./actions/handleAuthForm.js"></script>
+                <script src="./api/userAuthApi.js"></script>
+                <script src="./actions/reCaptcha.js"></script>
+                <script src="./actions/loginUser.js"></script>
+                <script src="./actions/registerUser.js"></script>
+                <script src="./actions/forgetPassword.js"></script>
+                <script src="./actions/resetPassword.js"></script>
+                <script src="./actions/confirmUser.js"></script>
+                <script src="./actions/logOutUser.js"></script>
+                <script src="./actions/handleLoginRegisterButton.js"></script>
+                <script>
+                    checkToken()
+                </script>
+            </form>
+        </div>
+        <div class="register__close_bg"></div>
+    </div>
+
+    <div class="error_box">
+        <div class="error_box__item error hidden" id="errorBoxMessage">
+            <div class="error_box__close_btn"><i class="i i-Systemsclose-fill"></i></div>
+            <div id="myErrorMessage">Error 401 server error test massage.</div>
+        </div>
+    </div>
+
+    <!-- end code-->
+
+
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/master.js" type="text/javascript"></script>
+
+    <!-- bg motion -->
+    <script src="plugin/background-motion/modernizr.min.js"></script>
+    <script src="plugin/background-motion/script.js"></script>
+    <!-- ----- SLIDER ----- -->
+    <link rel="stylesheet" type="text/css" href="plugin/slick-slider/slick/slick.css" />
+    <script type="text/javascript" src="plugin/slick-slider/slick/slick.min.js"></script>
+    <!-- ----- FULL PAGE PARALLAX ----- -->
+    <!--<script type="text/javascript" src="node_modules/fullpage.js/dist/fullpage.min.js"></script>-->
+
+    <!-- ------ THIS PAGE JS ----- -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+        // new fullpage('#fullpage', {
+        //     //options here
+        //     autoScrolling:true,
+        //     scrollHorizontally: true,
+        //
+        // });
+    </script>
+
+    <script type="text/javascript">
+
+    </script>
+
+</body>
+
+</html>

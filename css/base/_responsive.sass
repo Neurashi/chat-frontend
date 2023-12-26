@@ -1,0 +1,193 @@
+@import "../variables"
+@import "../mixin"
+
++breakpoint(bigDesktop)
+  .container
+    max-width: 1180px
+
+
++breakpoint(desktop)
+  .container
+    max-width: 900px
+
++breakpoint(smallDesktop)
+  .container
+    max-width: 700px
+  .row
+    max-width: 100%
+    margin-inline: auto
+  .header
+    &__logo
+      height: 34px
+    &__link_step
+      display: none
+  .main
+    .chat
+      height: calc(100vh - 100px)
+      margin-top: 8px
+
+  .category__item
+    height: auto
+    position: relative
+    overflow: hidden
+    i
+      font-size: 120px
+      margin-bottom: 0
+      line-height: 1
+      position: absolute
+      left: -40px
+      bottom: -40px
+      opacity: 0.05
+
++breakpoint(tablet)
+  .container
+    max-width: calc(100% - 40px)
+  .register
+    .wrapper
+      max-width: 90%
+      overflow-y: auto
+
++breakpoint(mobile)
+  body
+    height: 100vh !important
+    padding: 0
+    margin: 0
+    overflow: hidden
+    &.keyboard_on
+      height: 50vh !important
+  .container
+    width: 100%
+    max-width: 100%
+  .btn__small
+    padding: 4px 8px
+    font-size: 0.7rem
+    i
+      font-size: 0.8rem
+  .header
+    padding: 16px
+    &__logo
+      .badge
+        transform: scale(0.8)
+        top: -4px
+  .form_style__step
+    padding-bottom: 32px
+  .chat__header
+    padding: 2px 4px
+    &__btn
+      & i
+        font-size: 1.3rem
+  .main
+    .chat
+      &__help_text
+        padding-right: 16px
+        padding-left: 16px
+      &__wrap
+        padding: 0 8px 16px
+  .chat__msg_item--robot
+    margin-right: 0
+    margin-left: 36px
+  .category__step
+    margin-top: 48px
+  .category__item
+    padding: 16px
+  .chat__msg_item
+    .wrap
+      font-size: 0.85rem
+      padding-right: 0
+  .chat__msg_item
+    &--robot
+      padding-right: 8px
+      .robot_info
+        width: 38px
+        .robot_info--pic
+          width: 32px
+          height: 32px
+          padding: 8px
+  .chat__input input[type=text]
+    height: 48px
+    padding: 0 12px
+  .bg_motion
+    display: none
+  .main
+    position: fixed !important
+    left: 0
+    right: 0
+    top: 0
+    margin: 0
+    padding: 0
+    height: 100vh !important
+    transform: none !important
+    //& *
+      //border: solid 1px #FFF
+    & > .section
+      display: none
+    .main__section_1
+      display: block
+      padding-top: 0
+      position: fixed
+      z-index: 2
+      right: 0
+      left: 0
+      top: 0
+      bottom: 0
+      height: auto !important
+  .chat
+    position: fixed
+    top: 52px
+    height: 100vh !important
+    right: 0
+    left: 0
+    margin: 0 !important
+    border-top: solid 1px transparent
+    border-radius: 0 !important
+    box-shadow: 0 0 100px 60px rgba(0, 0, 0, 0)
+    &.active
+      border: solid 1px rgba(225, 225, 225, 0.05)
+      box-shadow: 0 0 100px 60px rgba(0, 0, 0, 0.93)
+      .chat__massage_box
+        position: absolute
+        left: 0
+        top: 4px
+        bottom: 80px
+        padding-bottom: 16px
+        right: 0
+        height: auto
+        .wrap
+          padding: 8px
+        .chat__msg_item--robot,
+        .chat__msg_item--client
+          max-width: calc(100% - 16px)
+    &__input
+      background: $blue-dark
+      position: fixed
+      z-index: 3
+      bottom: 0
+      right: 0
+      left: 0
+      width: auto
+      border-radius: 0
+    &__header
+
+    .robot_info--pic
+      opacity: 1
+  .fp-watermark
+    display: none !important
+  .error_box
+    top: 52px
+    left: 0 !important
+    width: 100%
+    bottom: auto
+    &__item
+      padding: 4px
+      border-radius: 0
+      font-size: 0.7rem
+      position: relative
+    &__close_btn
+      width: 100%
+      height: 100%
+      border-radius: 0
+      position: absolute
+      margin: 0
+      left: 0
+      top: 0
+      opacity: 0

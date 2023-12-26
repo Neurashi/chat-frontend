@@ -1,0 +1,32 @@
+@import "../variables"
+@import "../mixin"
++breakpoint(bigDesktop)
+
++breakpoint(desktop)
+  .column-lg-reverse
+    flex-direction: column-reverse
++breakpoint(smallDesktop)
+  .m-t-md-16
+    margin-top: 16px
+  .m-t-md-32
+    margin-top: 32px
+  .row
+    padding: 0
+    .col-md-12
+      padding: 0
++breakpoint(tablet)
+  .flex-sm-wrap
+    flex-wrap: wrap
+  .m-b-sm-16
+    margin-bottom: 16px
+  .flex-x-sm-center
+    justify-content: center
+  .text-sm-center
+    text-align: center
+  .row
+    padding: 0
+    .col-12,
+    .col-sm-12
+      padding: 0
+  .d-sm-flex
+    display: flex

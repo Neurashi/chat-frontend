@@ -1,0 +1,12 @@
+=font-face($family, $filename, $folder, $style: normal, $weight: 400, $weightName: "", $hsaSvg: false)
+  @font-face
+    font-family: $family
+    font-style: $style
+    font-weight: $weight
+    src: url('../../../top-shipping/font/#{$folder}/eot/#{$filename}-#{$weightName}.eot')
+
+    @if ($hsaSvg)
+      src: url('../../../top-shipping/font/#{$folder}/eot/#{$filename}-#{$weightName}.eot?#iefix') format('embedded-opentype'), url('../../../top-shipping/font/#{$folder}/woff/#{$filename}-#{$weightName}.woff') format("woff"), url('../../../top-shipping/#{$folder}/ttf/#{$filename}-#{$weightName}.ttf') format("truetype"), url('../../../top-shipping/#{$folder}/svg/#{$filename}-#{$weightName}.svg') format("svg")
+
+    @else
+      src: url('../../..top-shipping/font/#{$folder}/eot/#{$filename}-#{$weightName}.eot?#iefix') format('embedded-opentype'), url('../../../top-shipping/font/#{$folder}/woff/#{$filename}-#{$weightName}.woff') format("woff"), url('../../../top-shipping/#{$folder}/ttf/#{$filename}-#{$weightName}.ttf') format("truetype")

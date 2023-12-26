@@ -1,0 +1,75 @@
+@import "../variables"
+@import "media-query"
+
+// --------------------- Col ---------------------- //
+=col()
+  $Col: 12
+  @for $i from 1 through $Col
+    .col-#{$i}
+      width: (100% / $Col * $i)
+
+  @for $i from 1 through $Col
+    +breakpoint(bigDesktop)
+      .col-xl-#{$i}
+        width: (100% / $Col * $i)
+
+  @for $i from 1 through $Col
+    +breakpoint(desktop)
+      .col-lg-#{$i}
+        width: (100% / $Col * $i)
+
+  @for $i from 1 through $Col
+    +breakpoint(smallDesktop)
+      .col-md-#{$i}
+        width: (100% / $Col * $i)
+
+  @for $i from 1 through $Col
+    +breakpoint(tablet)
+      .col-sm-#{$i}
+        width: (100% / $Col * $i)
+
+  @for $i from 1 through $Col
+    +breakpoint(mobile)
+      .col-xs-#{$i}
+        width: (100% / $Col * $i)
+// --------------------- Flex ---------------------- //
+=flex()
+  $Flex: 50
+  @for $i from 1 through $Flex
+    .flex-#{$i}
+      flex: $i 0 auto !important
+
+// --------------------- Space ---------------------- //
+=marginSpace()
+  $spaceAmounts: (2, 4, 8, 16, 24, 32, 64)
+  $sides: (top, bottom, left, right)
+  $singleMargin: 4
+
+  @each $space in $spaceAmounts
+    @each $side in $sides
+      .m-#{str-slice($side, 0, 1)}-#{$space}
+        margin-#{$side}: #{$space}px
+
+      .p-#{str-slice($side, 0, 1)}-#{$space}
+        padding-#{$side}: #{$space}px
+
+    @each $i in $singleMargin
+      .m-#{$space}
+        margin: #{$space}px
+
+      .p-#{$space}
+        padding: #{$space}px
+
+      .m-x-#{$space}
+        margin: 0 #{$space}px
+
+      .m-y-#{$space}
+        margin: #{$space}px 0
+
+      .p-x-#{$space}
+        padding-right: #{$space}px
+        padding-left: #{$space}px
+
+      .p-y-#{$space}
+        padding-top: #{$space}px
+        padding-bottom: #{$space}px
