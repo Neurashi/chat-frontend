@@ -259,19 +259,21 @@ function changeBackgroundColor(element) {
     lastClickedElem = element;
     let robotinfo = document.getElementsByClassName('robot_info')[0];
     if (robotinfo) {
-        let model = element.className.split(" ").at(-1).toUpperCase()
+        let model = element.className.split(" ").at(-1)
         let note = robotinfo.parentNode.querySelector('.note');
+        console.log(model)
         if (note) {
             if (model == "neurashi") {
-            note.textContent = `${model} is here! Please feel free to ask anything related to the neurashi project from me`;
+                
+            note.textContent = `${model.toUpperCase()} is here! Please feel free to ask anything related to the neurashi project from me`;
 
             }
             else if (model == "yagami") {
-            note.textContent = `${model} is Looking forward to connecting through our chat. Please feel free to ask any general question from me`;
+            note.textContent = `${model.toUpperCase()} is Looking forward to connecting through our chat. Please feel free to ask any general question from me`;
 
             }
             else if (model == "shingeki") {
-            note.textContent = `Hi i am ${model}. Please feel free to ask any crypto related questions`;
+            note.textContent = `Hi i am ${model.toUpperCase()}. Please feel free to ask any crypto related questions`;
 
             }
         }
