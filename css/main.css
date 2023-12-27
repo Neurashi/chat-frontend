@@ -1961,7 +1961,13 @@ a.btn__submit+.btn__submit {
 }
 
 .form_style__error#registerError,
-.form_style__error#loginError {
+.form_style__error#loginError,
+.form_style__error#forgetError,
+.form_style__error#resetCodeError,
+.form_style__error#resetNewError,
+.form_style__error#resetRepeatError,
+.form_style__error#resetError,
+.form_style__error#confirmError{
   background: rgba(255, 86, 46, 0.1);
   text-align: center;
   border: solid 1px rgba(255, 86, 46, 0.1);
