@@ -8,6 +8,9 @@ const resetForm = document.getElementById("resetForm");
 const successLogin = document.getElementById('successLogin');
 const goToRegister = document.getElementById('goToRegister');
 const goToLogin = document.getElementById('goToLogin');
+const goToLogin2 = document.getElementById('goToLogin2');
+
+
 const goToForget = document.getElementById("goToForget");
 const goToReset = document.getElementById("")
 //? confirm element
@@ -24,6 +27,7 @@ const resendCodeButton = document.getElementById("resendResetCode");
 //! actions
 goToRegister.addEventListener('click', activeRegisterForm);
 goToLogin.addEventListener('click', activeLoginForm);
+goToLogin2.addEventListener('click', activeLoginForm);
 document.getElementById("goToForget").addEventListener("click", () => {
     activeForgetForm();
 })
