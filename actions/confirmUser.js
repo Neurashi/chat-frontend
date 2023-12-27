@@ -30,12 +30,15 @@ function handleConfirmClick() {
         confirmUserApi(confirmCodeInput)
             .then(data => {
                 if (data.status === 200 || data.status === 201 || data.status === '201' || data.status === '200') {
-                    storeData(TOKEN, data?.token)
-                    storeData(REFRESH_TOKEN, data?.refresh_token)
+                    if (data?.error) {
+                        showConfirmError(data.error)
+                      }else{
+                    storeData(TOKEN, data.token)
+                    storeData(REFRESH_TOKEN, data.refresh_token)
                     setLoginRegisterTitle()
                     activeSuccessLoginForm()
                     deleteMessages()
-                    appendMessage(createBotLoginSuccessMessage())
+                    appendMessage(createBotLoginSuccessMessage())}
                 } else if (data.status === 401 || data.status === '401') {
                     showConfirmError('Unauthorized')
                 } else {

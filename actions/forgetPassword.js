@@ -28,9 +28,12 @@ const handleForgetClick = () => {
         showForgetLoadingState();
         forgetPasswordApi(document.getElementById("forgetEmailInput").value, captchaToken)
             .then(data => {
+                if (data?.error) {
+                    showForgetError(data.error)
+                  }else{
                 storeData(CONFIRM_TOKEN, data?.token);
                 storeData(EMAIL, forgetEmailInput);
-                activeResetForm();
+                activeResetForm();}
             })
             .catch(error => {
                 showForgetError(error);

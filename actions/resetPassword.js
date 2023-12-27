@@ -15,6 +15,7 @@ const repeatPassword = document.getElementById("resetRepeatInput");
 //! actions
 resendCodeButton.addEventListener("click", () => {
     resendResetCodeApi(getData(EMAIL)).then(res => {
+        
         document.getElementById("resetPasswordHelper").style = "block";
 
         activeCounter()
@@ -36,10 +37,13 @@ const handleResetPassword = (e) => {
             showLoadingState();
             resetPasswordApi(getData(EMAIL), codeInput.value, newPassword.value, captchaToken)
                 .then(data => {
-                    console.log(data)
+
+                    if (data?.error) {
+                        showInputErrors(data.error)
+                    }else{
                     deactivatedForms();
                     resetChangeForm();
-                    activeLoginForm();
+                    activeLoginForm();}
                 })
                 .catch(error => {
                     console.log("line7")

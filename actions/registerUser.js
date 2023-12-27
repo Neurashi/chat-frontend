@@ -33,9 +33,12 @@ function handleRegisterClick() {
         registerUserApi(registerEmailInput, registerPasswordInput, captchaToken)
             .then(data => {
                 if (data.status === 200 || data.status === 201 || data.status === '201' || data.status === '200') {
+                    if (data?.error) {
+                        showRegisterError(data.error)
+                      }else{
                     storeData(CONFIRM_TOKEN, data.token)
                     storeData(EMAIL, registerEmailInput)
-                    activeConfirmForm()
+                    activeConfirmForm()}
                 } else if (data.status === 401 || data.status === '401') {
                     showRegisterError('Unauthorized')
                 } else {
