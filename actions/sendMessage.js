@@ -78,7 +78,7 @@ function handleSendButtonClick() {
                 .then(data => {
                     if (data.status === 200 || data.status === 201 || data.status === '201' || data.status === '200') {
 
-                            appendMessage(createBotMessage(data?.content, ''))
+                            appendMessage(createBotMessage(data.content, ''))
 
                         hideLoadingState()
                         handleDeleteSendImageMessageClick()
