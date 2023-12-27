@@ -104,7 +104,7 @@ function daActiveCounter() {
 }
 
 function startTimer() {
-    let timer = (2 * 60).toString();
+    let timer = (10 * 60).toString();
     let minutes, seconds;
     countdown = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
