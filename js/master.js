@@ -225,7 +225,7 @@ $(document).ready(function () {
     ////////// alert massage
 
     $(document).on("click", ".error_box__close_btn", function () {
-        $(this).parents('.error_box__item').hide();
+        $(this).parents('.error_box').css("visibility", "hidden");
     });
 
     ///////// History

@@ -175,6 +175,7 @@ function hideLoadingState() {
 function showErrorMessageBox(errorMessage) {
     const errorBoxMessage = document.getElementById("errorBoxMessage");
     errorBoxMessage.classList.remove("hidden");
+    errorBoxMessage.parentNode.style.visibility = "visible"
     const message = document.getElementById("myErrorMessage");
     message.innerText = errorMessage;
     setTimeout(function () {
