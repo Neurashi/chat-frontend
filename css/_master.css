@@ -176,6 +176,7 @@
 .main {
   position: relative;
   z-index: 2;
+
 }
 .main .chat {
   height: calc(100vh - 80px);

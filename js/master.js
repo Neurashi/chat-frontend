@@ -294,6 +294,8 @@ function changeBackgroundColor(element) {
         lastClickedElem.style.color = '';
         lastClickedElem.id = '';
     }
+    imagebutton = document.getElementById("fileButton");
+    
 
     // change background color of clicked element
     element.style.backgroundColor = 'rgba(204, 204, 204, 0.5)';
@@ -304,6 +306,7 @@ function changeBackgroundColor(element) {
 
     element.id = 'model_active';
     // update lastClickedElem
+    
     lastClickedElem = element;
     let robotinfo = document.getElementsByClassName('robot_info')[0];
     if (robotinfo) {
@@ -317,19 +320,20 @@ function changeBackgroundColor(element) {
                 let weltext = "you are now talking to neurashi"
                 changeWelcomemessage(weltext)
             note.textContent = `${model.toUpperCase()} is here! Please feel free to ask anything related to the neurashi project from me`;
-
+            imagebutton.style.visibility = "hidden";
             }
             else if (model == "yagami") {
                 let weltext = "you are now talking to yagami"
                 changeWelcomemessage(weltext)
             note.textContent = `${model.toUpperCase()} is Looking forward to connecting through our chat. Please feel free to ask any general question from me`;
+            imagebutton.style.visibility = "visible";
 
             }
             else if (model == "shingeki") {
                 let weltext = "you are now talking to shingeki"
                 changeWelcomemessage(weltext)
             note.textContent = `Hi i am ${model.toUpperCase()}. Please feel free to ask any crypto related questions`;
-
+            imagebutton.style.visibility = "hidden";
             }
         }
         if (model == "neurashi") {
