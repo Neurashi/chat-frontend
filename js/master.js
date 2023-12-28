@@ -238,7 +238,55 @@ $(document).ready(function () {
 });
 
 let lastClickedElem = document.getElementById('model_active');
+function createBotMessagewelcome(message, imageSrc) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('chat__msg_item', 'chat__msg_item--robot','chat__msg_switch_message');
+    const robotInfo = document.createElement('div');
+    robotInfo.classList.add('robot_info', 'd-flex', 'flex-column', 'flex-x-between', 'flex-y-center');
+    const robotPic = document.createElement('div');
+    robotPic.classList.add('robot_info--pic');
+    const robotImage = document.createElement('img');
+    robotImage.setAttribute('src', 'img/logo/w-logo-small.png');
+    robotImage.setAttribute('alt', '');
+    const languageSpan = document.createElement('span');
+    robotPic.appendChild(robotImage);
+    robotPic.appendChild(languageSpan);
+    robotInfo.appendChild(robotPic);
+    const wrap = document.createElement('div');
+    wrap.classList.add('wrap');
+    const messageParagraph = document.createElement('p');
+    messageParagraph.textContent = message;
+    wrap.appendChild(messageParagraph);
+    if (imageSrc) {
+        const image = document.createElement('img');
+        image.setAttribute('src', imageSrc);
+        image.setAttribute('alt', '');
+        wrap.appendChild(image);
+    }
+    messageElement.appendChild(robotInfo);
+    messageElement.appendChild(wrap);
+    return messageElement;
+}
+function changeWelcomemessage(text){
+    const token = getData(TOKEN)
+        
+        let massageBoxElement2 = document.getElementById('chatContainer');
+        
+        let lastElement = massageBoxElement2.lastChild;
+        if (lastElement.nodeType == 3) {
+            lastElement = massageBoxElement2.lastChild.previousSibling;
+        }
+    if (token) {
+        if (lastElement && (!lastElement.classList.contains('chat__msg_switch_message'))) {
+        
+            appendMessage(createBotMessagewelcome(text, ''))
+        }
+        if (lastElement && (lastElement.classList.contains('chat__msg_switch_message'))) {
+            lastElement.querySelector('p').textContent = text
+        }
 
+        }
+}
 function changeBackgroundColor(element) {
     // check if there is a lastClickedElem and revert its background color
     if (lastClickedElem) {
@@ -261,21 +309,43 @@ function changeBackgroundColor(element) {
     if (robotinfo) {
         let model = element.className.split(" ").at(-1)
         let note = robotinfo.parentNode.querySelector('.note');
-        console.log(model)
+        
+  
+   
         if (note) {
             if (model == "neurashi") {
-                
+                let weltext = "you are now talking to neurashi"
+                changeWelcomemessage(weltext)
             note.textContent = `${model.toUpperCase()} is here! Please feel free to ask anything related to the neurashi project from me`;
 
             }
             else if (model == "yagami") {
+                let weltext = "you are now talking to yagami"
+                changeWelcomemessage(weltext)
             note.textContent = `${model.toUpperCase()} is Looking forward to connecting through our chat. Please feel free to ask any general question from me`;
 
             }
             else if (model == "shingeki") {
+                let weltext = "you are now talking to shingeki"
+                changeWelcomemessage(weltext)
             note.textContent = `Hi i am ${model.toUpperCase()}. Please feel free to ask any crypto related questions`;
 
             }
+        }
+        if (model == "neurashi") {
+            let weltext = "you are now talking to neurashi"
+            changeWelcomemessage(weltext)
+
+        }
+        else if (model == "yagami") {
+            let weltext = "you are now talking to yagami"
+            changeWelcomemessage(weltext)
+
+        }
+        else if (model == "shingeki") {
+            let weltext = "you are now talking to shingeki"
+            changeWelcomemessage(weltext)
+
         }
     }
 }
