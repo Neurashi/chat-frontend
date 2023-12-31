@@ -319,7 +319,7 @@ function changeBackgroundColor(element) {
             if (model == "neurashi") {
                 let weltext = "you are now talking to neurashi"
                 changeWelcomemessage(weltext)
-            note.textContent = `${model.toUpperCase()} is here! Please feel free to ask anything related to the neurashi project from me`;
+            note.textContent = `${model.toUpperCase()} is here! Please feel free to ask anything related to the Neurashi project from me`;
             imagebutton.style.visibility = "hidden";
             }
             else if (model == "yagami") {
